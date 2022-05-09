@@ -1,5 +1,6 @@
 package com.dataEstructur.Game.controlador;
 
+import com.dataEstructur.Game.juego.GeneradorG;
 import com.dataEstructur.Game.juego.JuegoLogical;
 import java.util.HashMap;
 import java.util.Map;
@@ -105,6 +106,12 @@ public class Controlador {
     public Map<String, String> getLevel(@RequestParam int level) {
         return juego.getLevel(level);
 
+    }
+    
+    @GetMapping(path = "/status-avltree")
+    public void nivel(){
+        GeneradorG generador = new GeneradorG();
+        generador.dibujarGrafico(this.juego.getArbol().getRaiz());
     }
 
 }

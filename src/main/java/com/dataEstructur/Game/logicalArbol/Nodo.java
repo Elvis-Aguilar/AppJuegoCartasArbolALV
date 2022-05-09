@@ -1,5 +1,8 @@
 package com.dataEstructur.Game.logicalArbol;
 
+import com.dataEstructur.Game.juego.JuegoLogical;
+import com.dataEstructur.Game.juego.ValCarta;
+
 /**
  *
  * @author elvis_agui
@@ -58,6 +61,30 @@ public class Nodo {
 
     public void setHijoDerecho(Nodo hijoDerecho) {
         this.hijoDerecho = hijoDerecho;
+    }
+    
+    /**
+     * recursividad para obtener a lso hijos nodos
+     * @return 
+     */
+     public String textoGrafica(){
+         ValCarta valor = new ValCarta();
+        if (this.hijoIzquierdo==null && this.hijoDerecho ==null) {
+            String temp=  "\"" +valor.getCarta(this.dato)+"\"";
+            return temp;
+        }else{
+            String texto="";
+            if (this.hijoIzquierdo!=null) {
+                String temp=  "\"" +valor.getCarta(this.dato)+"\"";
+                texto= temp + "->" +this.hijoIzquierdo.textoGrafica() +"\n";
+            }
+            if (this.hijoDerecho!=null) {
+                String temp=  "\"" +valor.getCarta(this.dato)+"\"";
+                texto += temp + "->" +this.hijoDerecho.textoGrafica() + "\n"; 
+                
+            }
+            return texto;
+        }
     }
 
 }

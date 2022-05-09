@@ -1,0 +1,15 @@
+digraph G
+{
+      node[shape = circle]
+      node[style = filled]
+      node[fillcolor = "#EEEEE"]
+      node[color = "#EEEEE"]
+      edge[color = "#31CEF0"]
+"J♦"->"10♣"->"5♣"
+"10♣"->"A♦"
+
+"J♦"->"K♥"->"10♥"
+"K♥"->"2♠"
+
+
+}
